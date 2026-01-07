@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScaRLS: Scalabe Robot Learning System for Robot Manipulation</title>
+    <!-- Use Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for clean, RT-2 like aesthetic */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for responsive video containers (16:9 Aspect Ratio) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        .video-container iframe,
+        .video-container .placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Style for smooth sticky navigation */
+        #nav-bar-sticky {
+            transition: box-shadow 0.3s ease;
+        }
+        /* Explicitly set font stack and smoothing for a crisp look (mimicking Inter/RT-2 style) */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- 1. Hero Section (Title, Authors, Links) -->
+    <section id="hero" class="container mx-auto px-4 pt-10 pb-4 text-center max-w-6xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-snug mb-4">
+            ScaRLS: Scalabe Robot Learning System for Robot Manipulation
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+           ScaRLS establishes a complete system closed-loop featuring asynchronous data collection (incorporating both autonomous model inference and human-in-the-loop intervention), asyn-
+chronous training, and asynchronous parameter distribution.
+This architecture not only accelerates the workflow of individual
+computing nodes but also enables large-scale data acquisition and
+high-efficiency learning by scaling up the number of computing
+nodes.
+        </p>
+        
+        <!-- Authors & Affiliations -->
+        <div class="mb-8 max-w-3xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-md text-gray-700">
+            </div>
+            <p class="text-sm text-gray-500 mt-2">
+                Agibot Team
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-6 space-x-4">
+            <a href="./ScaRLS.pdf" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
+                Read Paper (PDF)
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Banner Image (Visual Centerpiece) -->
+    <section id="banner" class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="bg-gray-100 rounded-xl shadow-lg overflow-hidden">
+            <!-- Large Image Placeholder -->
+            <img src="./main1.png" 
+                 alt="Overview of the ScaRLS Framework"
+                 class="w-full h-auto object-cover"
+                 onerror="this.onerror=null; this.src='https://placehold.co/1200x500/A0BFFF/FFFFFF?text=Main+Conceptual+Figure+or+Hero+Image';" />
+            <p class="text-sm text-center text-gray-500 py-3">
+                Overview of the ScaRLS Framework
+            </p>
+        </div>
+    </section>
+    
+    <!-- 3. Navigation Bar (Sticky and Clean) -->
+    <header id="nav-bar-sticky" class="sticky top-0 z-50 bg-white  border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-center space-x-8 max-w-5xl">
+            <a href="#abstract" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">Abstract</a>
+            <!-- <a href="#approach" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">Approach</a>
+            <a href="#results" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">Results</a>
+            <a href="#videos" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">Videos</a> -->
+            <a href="#citation" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-150">Citation</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-16 max-w-5xl space-y-20">
+
+        <!-- 4. Abstract Section -->
+        <section id="abstract">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2">Abstract</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+               In the field of robotic manipulation, achieving both
+high generalization capability and high reliability (i.e., high task
+success rates) remains a central challenge. A critical bottleneck
+constraining current system performance is the insufficiency of
+data space coverage—specifically, the robot’s exploration and
+comprehension of the state space (comprising both observations
+and actions) are severely limited. To overcome this bottleneck,
+this paper proposes ScaRLS (Scalable Robotic Learning System),
+a scalable learning framework designed for robotic manipulation
+tasks. By leveraging a distributed edge computing architecture,
+ScaRLS facilitates the acquisition of broader data distributions
+and enables efficient learning from such data.
+ScaRLS establishes a complete system closed-loop featuring
+asynchronous data collection (incorporating both autonomous
+model inference and human-in-the-loop intervention), asyn-
+chronous training, and asynchronous parameter distribution.
+This architecture not only accelerates the workflow of individual
+computing nodes but also enables large-scale data acquisition and
+high-efficiency learning by scaling up the number of computing
+nodes. Furthermore, the system demonstrates robust versatility,
+offering adaptability to diverse algorithmic models and robotic
+embodiments.
+            </p>
+        </section>
+
+        <!-- 5. Approach Overview Section (Text + Figure Placeholder) -->
+        <!-- <section id="approach">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2">Approach Overview</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                [TEXT PLACEHOLDER] Our core innovation lies in the action tokenization scheme, which translates continuous robot control signals into discrete vocabulary tokens. This allows us to treat the robotic control problem as a sequence-to-sequence prediction task within the framework of a large language model. The model is fine-tuned on a mixed dataset of Internet data and a large-scale, diverse set of robot trajectories (Open X-Embodiment).
+            </p>
+            
+           
+            <div class="p-6 rounded-xl shadow-inner border border-gray-100">
+                <div class="h-80 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 font-medium">
+                    [Image Placeholder: Detailed Model Architecture / Action Tokenization Schematic]
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">
+                    Figure 2: The [MODEL NAME] Architecture. We unify vision, language, and robot actions into a single sequence model.
+                </p>
+            </div>
+
+            <p class="text-lg text-gray-700 leading-relaxed mt-8">
+                [TEXT PLACEHOLDER] This unified training objective enables cross-modal grounding, where linguistic understanding directly informs policy decisions. The model learns to reason about physics, object properties, and task constraints implicitly from the pre-trained data, dramatically reducing the need for explicit domain engineering.
+            </p>
+        </section> -->
+
+        <!-- 6. Quantitative Results Section (Text + Charts Placeholder) -->
+        <!-- <section id="results">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2">Results</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-10">
+                [TEXT PLACEHOLDER] We evaluate [MODEL NAME] on the [BENCHMARK NAME] benchmark, which includes both seen and unseen tasks. Our model significantly outperforms previous state-of-the-art methods, particularly in the zero-shot generalization setting, demonstrating its ability to transfer knowledge learned from Internet data to real-world manipulation.
+            </p>
+
+           
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                
+                <div class="p-4 rounded-xl shadow-lg border border-gray-100">
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 font-medium mb-4">
+                        [Chart Placeholder: Main Benchmark Performance Comparison]
+                    </div>
+                    <p class="text-sm text-gray-600 text-center">
+                        Figure 3: Overall success rate on the [Benchmark] dataset.
+                    </p>
+                </div>
+
+               
+                <div class="p-4 rounded-xl shadow-lg border border-gray-100">
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 font-medium mb-4">
+                        [Chart Placeholder: Ablation Study Results]
+                    </div>
+                    <p class="text-sm text-gray-600 text-center">
+                        Figure 4: Ablation study showing the impact of the VLA component.
+                    </p>
+                </div>
+
+                
+                <div class="p-4 rounded-xl shadow-lg border border-gray-100">
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 font-medium mb-4">
+                        [Chart Placeholder: Zero-Shot Transfer Performance]
+                    </div>
+                    <p class="text-sm text-gray-600 text-center">
+                        Figure 5: Zero-shot success on novel objects and backgrounds.
+                    </p>
+                </div>
+
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed mt-10">
+                [TEXT PLACEHOLDER] Further qualitative analysis confirms that the model's failures are generally related to fine-grained motor control limits rather than high-level planning errors, indicating the success of the unified semantic understanding.
+            </p>
+        </section> -->
+
+        <!-- 7. Videos & Demo Section -->
+        <!-- <section id="videos">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2">Videos & Qualitative Demos</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-10">
+                [TEXT PLACEHOLDER] Below, we showcase several videos demonstrating [MODEL NAME]'s capabilities on complex, multi-stage, and visually diverse tasks that require semantic reasoning and physical intelligence.
+            </p>
+
+           
+            <div class="video-container shadow-2xl mb-8">
+                <div class="placeholder bg-gray-800 flex items-center justify-center text-white text-xl">
+                    [Video Placeholder: Insert YouTube/Vimeo iframe or video embed code here]
+                </div>
+            </div>
+            <p class="text-center text-md text-gray-600 mb-10">
+                Video 1: Zero-shot execution of the instruction, "Please put the red block on the blue towel."
+            </p>
+
+           
+            <div class="video-container shadow-2xl">
+                <div class="placeholder bg-gray-800 flex items-center justify-center text-white text-xl">
+                    [Video Placeholder 2: Complex Task / Failure Recovery Demo]
+                </div>
+            </div>
+            <p class="text-center text-md text-gray-600">
+                Video 2: Demonstration of robust failure recovery when an object is unexpectedly moved.
+            </p>
+        </section> -->
+        
+        <!-- 8. Citation Section -->
+        <section id="citation" class="mt-20">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2">Citation</h2>
+            
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md text-left">
+                <p class="text-xl font-medium text-gray-800 mb-2">
+                    ScaRLS: Scalabe Robot Learning System for Robot Manipulation
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Agibot Team
+                </p>
+                
+                
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">BibTeX</h3>
+                <div class="bg-gray-800 p-4 rounded text-sm overflow-x-auto font-mono text-green-300">
+                    <!-- BibTeX Placeholder -->
+                    @inproceedings{
+                        title={ScaRLS: Scalabe Robot Learning System for Robot Manipulation},
+                        author={Agibot Team},
+                        booktitle={None},
+                        year={2025}
+                    }
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 text-gray-500 py-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>
+                Project page inspired by the RT-2 Project.
+            </p>
+            <p class="mt-2">
+                &copy; 2025 [Agibot Team] | All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
